@@ -564,8 +564,40 @@
                 <span class="text-white">Escalable</span>
             </span>
         </div>
+
+        <div class="mb-6">
+            <!-- Botón de compartir nativo -->
+            <button id="shareBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white border-none px-5 py-2.5 rounded-xl font-bold cursor-pointer inline-flex items-center gap-2.5 shadow-lg shadow-emerald-600/30 transition transform hover:-translate-y-0.5 text-xs sm:text-sm">
+                <i class="fa-solid fa-share-nodes"></i>
+                <span>Compartir sitio web</span>
+            </button>
+        </div>
+
         <p class="text-xs text-gray-400 font-medium">&copy; 2026 D-NEXUS. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        const shareBtn = document.getElementById('shareBtn');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', async () => {
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: 'D-Nexus | Desarrollo Web y Tecnología',
+                            text: '¡Echa un vistazo a D-Nexus!',
+                            url: 'https://d-nexus.github.io/dnexus/'
+                        });
+                    } catch (err) {
+                        console.log('Error al compartir:', err);
+                    }
+                } else {
+                    // Plan B para computadoras de escritorio
+                    navigator.clipboard.writeText('https://d-nexus.github.io/dnexus/');
+                    alert('¡Enlace copiado al portapapeles!');
+                }
+            });
+        }
+    </script>
 
     <!-- Boosted Visible Full-Screen Stardust Engine with Enhanced Glow -->
     <script>
