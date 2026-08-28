@@ -288,18 +288,44 @@
                 </div>
             </div>
 
-            <!-- Card 2 (SEO & Crecimiento) -->
-            <div class="glass-panel service-box p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 group cursor-pointer" onclick="window.location.href='#contact'">
+            <!-- Card 2 (Diseño Web, SEO & Crecimiento) -->
+            <div class="glass-panel service-box p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 group">
                 <div>
                     <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/25 to-blue-600/25 border border-cyan-500/40 flex items-center justify-center text-cyan-400 mb-6 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-400 group-hover:text-white group-hover:shadow-lg group-hover:shadow-cyan-500/40 transition-all duration-300">
                         <i class="fa-solid fa-chart-line text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition">SEO & Crecimiento</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">Impulsa tu tráfico orgánico, escala posiciones en buscadores y maximiza tu rentabilidad.</p>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition">Diseño Web, SEO & Crecimiento</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed mb-4">Impulsa tu tráfico orgánico, escala posiciones en buscadores y maximiza tu rentabilidad.</p>
+                    
+                    <!-- Contenedor desplegable de detalles -->
+                    <div id="serviceDetails" class="hidden space-y-2 mb-4 p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-gray-300 transition-all">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-check text-cyan-400"></i>
+                            <span>Diseño adaptable (Responsive UI/UX)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-check text-cyan-400"></i>
+                            <span>Optimización extrema de velocidad</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-check text-cyan-400"></i>
+                            <span>Posicionamiento SEO avanzado</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-cyan-400 group-hover:text-white transition">
-                    <span>Saber más</span>
-                    <i class="fa-solid fa-arrow-right text-[10px] transform group-hover:translate-x-1.5 transition"></i>
+
+                <div class="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                    <!-- Enlace secundario: Ver detalles -->
+                    <button type="button" onclick="toggleServiceDetails(event)" class="text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition flex items-center justify-center sm:justify-start space-x-1.5 py-1 px-2 rounded-lg hover:bg-white/5">
+                        <span id="detailsBtnText">Ver detalles</span>
+                        <i id="detailsIcon" class="fa-solid fa-chevron-down text-[10px] transition-transform"></i>
+                    </button>
+
+                    <!-- Botón principal CTA: Cotizar proyecto -->
+                    <a href="#contact" class="inline-flex items-center justify-center space-x-2 px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 shadow-md shadow-cyan-500/20 transition transform hover:-translate-y-0.5">
+                        <span>Cotizar proyecto</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
             </div>
 
@@ -566,7 +592,7 @@
         </div>
 
         <div class="mb-8">
-            <p class="text-xs text-gray-400 uppercase tracking-widest mb-4 font-semibold">Comparte este sitio web</p>
+            <p class="text-xs text-cyan-400 uppercase tracking-widest mb-4 font-semibold">Compártelo en las Redes</p>
             <div class="flex flex-wrap items-center justify-center gap-3">
                 <!-- WhatsApp -->
                 <a href="https://api.whatsapp.com/send?text=Echa%20un%20vistazo%20a%20d-nexus%3A%20https%3A%2F%2Fd-nexus.github.io%2Fdnexus%2F" target="_blank" rel="noopener noreferrer" aria-label="Compartir en WhatsApp" class="w-11 h-11 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-gray-300 hover:text-emerald-400 flex items-center justify-center text-lg transition-all transform hover:-translate-y-1 shadow-md">
@@ -579,10 +605,6 @@
                 <!-- Telegram -->
                 <a href="https://t.me/share/url?url=https%3A%2F%2Fd-nexus.github.io%2Fdnexus%2F&text=d-nexus%20-%20Desarrollo%20Web" target="_blank" rel="noopener noreferrer" aria-label="Compartir en Telegram" class="w-11 h-11 rounded-xl bg-white/5 hover:bg-sky-500/20 border border-white/10 hover:border-sky-500/40 text-gray-300 hover:text-sky-400 flex items-center justify-center text-lg transition-all transform hover:-translate-y-1 shadow-md">
                     <i class="fa-brands fa-telegram"></i>
-                </a>
-                <!-- X (Twitter) -->
-                <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fd-nexus.github.io%2Fdnexus%2F&text=Explora%20d-nexus" target="_blank" rel="noopener noreferrer" aria-label="Compartir en X (Twitter)" class="w-11 h-11 rounded-xl bg-white/5 hover:bg-cyan-500/20 border border-white/10 hover:border-cyan-500/40 text-gray-300 hover:text-cyan-400 flex items-center justify-center text-lg transition-all transform hover:-translate-y-1 shadow-md">
-                    <i class="fa-brands fa-x-twitter"></i>
                 </a>
                 <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fd-nexus.github.io%2Fdnexus%2F" target="_blank" rel="noopener noreferrer" aria-label="Compartir en LinkedIn" class="w-11 h-11 rounded-xl bg-white/5 hover:bg-blue-700/20 border border-white/10 hover:border-blue-600/40 text-gray-300 hover:text-blue-500 flex items-center justify-center text-lg transition-all transform hover:-translate-y-1 shadow-md">
@@ -706,6 +728,24 @@
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // Toggle Service Details Logic
+        function toggleServiceDetails(event) {
+            event.stopPropagation();
+            const details = document.getElementById('serviceDetails');
+            const btnText = document.getElementById('detailsBtnText');
+            const icon = document.getElementById('detailsIcon');
+            
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+                btnText.textContent = 'Ocultar detalles';
+                icon.classList.add('rotate-180');
+            } else {
+                details.classList.add('hidden');
+                btnText.textContent = 'Ver detalles';
+                icon.classList.remove('rotate-180');
+            }
+        }
     </script>
 
 </body>
