@@ -105,13 +105,37 @@
             <a href="contacto.html" class="hover:text-cyan-400 transition">Contacto</a>
         </nav>
 
-        <div>
-            <a href="contacto.html" class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 shadow-lg shadow-cyan-500/25 transition transform hover:-translate-y-0.5">
-                <span>Cotizar Proyecto</span>
-                <i class="fa-solid fa-arrow-right text-xs"></i>
-            </a>
+        <div class="flex items-center space-x-3">
+            <div class="hidden md:block">
+                <a href="contacto.html" class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 shadow-lg shadow-cyan-500/25 transition transform hover:-translate-y-0.5">
+                    <span>Cotizar Proyecto</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button id="mobileMenuBtn" aria-label="Abrir menú" class="md:hidden w-10 h-10 rounded-xl bg-white/5 border border-cyan-500/30 text-cyan-400 flex items-center justify-center hover:bg-cyan-500/15 transition">
+                <i class="fa-solid fa-bars text-lg"></i>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden max-w-7xl mx-auto px-6 pb-6 relative z-50">
+        <div class="glass-panel p-6 rounded-2xl flex flex-col space-y-3 bg-gray-950/95 border border-cyan-500/40 shadow-2xl">
+            <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2 border-b border-white/5">Inicio</a>
+            <a href="servicios.html" class="text-sm font-medium text-white hover:text-cyan-400 transition py-2 border-b border-white/5">Servicios y Precios</a>
+            <a href="nosotros.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2 border-b border-white/5">Nosotros</a>
+            <a href="portafolio.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2 border-b border-white/5">Portafolio</a>
+            <a href="contacto.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2">Contacto</a>
+            <div class="pt-2">
+                <a href="contacto.html" class="w-full inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 shadow-lg shadow-cyan-500/25 transition">
+                    <span>Cotizar Proyecto</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Sección Planes y Soluciones Web -->
     <section id="precios" class="max-w-7xl mx-auto px-6 py-20 relative z-10">
@@ -325,8 +349,25 @@
         <p class="text-xs text-gray-400 font-medium">&copy; 2026 D-NEXUS. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Stardust Engine Script -->
+    <!-- Stardust Engine & Mobile Menu Script -->
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            });
+        }
+
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
         let width, height;
