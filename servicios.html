@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios y Precios - D-Nexus</title>
+    <!-- Open Graph / Redes Sociales Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://d-nexus.github.io/dnexus/servicios.html">
+    <meta property="og:title" content="Servicios y Precios - D-Nexus">
+    <meta property="og:description" content="Conoce nuestros planes, paquetes web y servicios de desarrollo a la medida.">
+    <meta property="og:image" content="https://d-nexus.github.io/dnexus/img/Logo.jpg">
+
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#050811',
+                        cardBg: 'rgba(255, 255, 255, 0.03)',
+                        cardBorder: 'rgba(255, 255, 255, 0.08)',
+                        accentBlue: '#0066ff',
+                        accentCyan: '#00d2ff',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-image: linear-gradient(to bottom, rgba(5, 8, 17, 0.88), rgba(5, 8, 17, 0.98)), url('img/fondo.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .glow-effect {
+            box-shadow: 0 0 60px -10px rgba(0, 102, 255, 0.35);
+        }
+        .card, .service-box, .about-box, .glass-panel {
+            background: linear-gradient(135deg, rgba(0, 243, 255, 0.06) 0%, rgba(10, 20, 40, 0.18) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(0, 243, 255, 0.5);
+            border-radius: 24px;
+            box-shadow: 
+                0 0 25px rgba(0, 243, 255, 0.2),
+                inset 0 0 15px rgba(0, 243, 255, 0.1),
+                0 20px 40px rgba(0, 0, 0, 0.6);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card:hover, .service-box:hover, .about-box:hover, .glass-panel:hover {
+            border-color: rgba(0, 243, 255, 1);
+            box-shadow: 
+                0 0 45px rgba(0, 243, 255, 0.45),
+                inset 0 0 25px rgba(0, 243, 255, 0.25),
+                0 25px 50px rgba(0, 0, 0, 0.7);
+            transform: translateY(-6px);
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative selection:bg-blue-600 selection:text-white">
+
+    <!-- Interactive Full-Screen Digital Stardust Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Background Glows -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+    <div class="absolute top-[30%] left-1/4 w-[600px] h-[600px] bg-indigo-600/10 blur-[180px] rounded-full pointer-events-none z-0"></div>
+
+    <!-- Navbar -->
+    <header class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-50">
+        <div class="flex items-center space-x-3">
+            <img src="img/Logo.jpg" alt="D-Nexus Logo" class="w-10 h-10 rounded-xl object-cover border border-cyan-500/30 shadow-md">
+            <span class="text-xl font-bold tracking-tight text-white">D-NEXUS</span>
+        </div>
+
+        <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-300">
+            <a href="index.html" class="hover:text-cyan-400 transition">Inicio</a>
+            <a href="servicios.html" class="text-white hover:text-cyan-400 transition">Servicios y Precios</a>
+            <a href="nosotros.html" class="hover:text-cyan-400 transition">Nosotros</a>
+            <a href="portafolio.html" class="hover:text-cyan-400 transition">Portafolio</a>
+            <a href="contacto.html" class="hover:text-cyan-400 transition">Contacto</a>
+        </nav>
+
+        <div>
+            <a href="contacto.html" class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 shadow-lg shadow-cyan-500/25 transition transform hover:-translate-y-0.5">
+                <span>Cotizar Proyecto</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Sección Planes y Soluciones Web -->
+    <section id="precios" class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+        <div class="text-center mb-16">
+            <span class="text-xs font-semibold text-cyan-400 uppercase tracking-widest">Inversión & Valor</span>
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Planes y Soluciones Web</h3>
+            <p class="text-gray-300 text-sm sm:text-base mt-3 max-w-2xl mx-auto">Soluciones escalables adaptadas a las necesidades y objetivos de crecimiento de tu negocio.</p>
+        </div>
+
+        <!-- Grid de 3 tarjetas de precios -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-12">
+            
+            <!-- Paquete 1: Landing Page Presencia -->
+            <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 group relative">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-500 group-hover:text-white transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider block mb-1">Esencial</span>
+                    <h4 class="text-xl font-bold text-white mb-3">Landing Page Presencia</h4>
+                    <div class="text-3xl sm:text-4xl font-black text-white tracking-tight bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">Desde $150 <span class="text-xs font-normal text-gray-400">USD</span></div>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-6">Ideal para profesionales independientes, negocios locales y lanzamientos rápidos.</p>
+                    
+                    <ul class="space-y-3 mb-8 text-xs sm:text-sm text-gray-300">
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Diseños de 1 página responsive</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Optimización SEO básica</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Integración directa con WhatsApp</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Entrega rápida (3 a 5 días)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-xs text-cyan-400 font-mono mb-4 flex items-center space-x-1.5">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Entrega: 3-5 días hábiles</span>
+                    </div>
+                    <a href="contacto.html" class="w-full py-3.5 px-4 rounded-xl bg-white/5 border border-cyan-500/40 text-cyan-400 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 hover:text-white hover:border-transparent font-semibold text-sm transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg">
+                        <span>Cotizar Landing</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Paquete 2: Web Corporativa Pro (Destacada) -->
+            <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between border-2 border-cyan-400 shadow-[0_0_35px_rgba(0,243,255,0.25)] bg-gradient-to-b from-cyan-500/10 via-transparent to-transparent md:-translate-y-2 transition-all duration-300 group relative">
+                <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2">
+                    <span class="px-4 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-cyan-500/40">MÁS POPULAR</span>
+                </div>
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white flex items-center justify-center mb-6 shadow-md shadow-cyan-500/30">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    </div>
+                    <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider block mb-1">Profesional</span>
+                    <h4 class="text-xl font-bold text-white mb-3">Web Corporativa Pro</h4>
+                    <div class="text-3xl sm:text-4xl font-black text-white tracking-tight bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">Desde $350 <span class="text-xs font-normal text-gray-400">USD</span></div>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-6">La solución completa para PYMEs que buscan una imagen profesional y autogestionable.</p>
+                    
+                    <ul class="space-y-3 mb-8 text-xs sm:text-sm text-gray-300">
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Hasta 5 páginas integradas</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                            <span>CMS para editar contenidos</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                            <span>SEO avanzado y velocidad optimizada</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Correo corporativo y dominio</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Soporte prioritario</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-xs text-cyan-400 font-mono mb-4 flex items-center space-x-1.5">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Entrega: 7-10 días hábiles</span>
+                    </div>
+                    <a href="contacto.html" class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white hover:from-blue-700 hover:to-cyan-600 font-semibold text-sm transition-all duration-300 flex items-center justify-center space-x-2 shadow-xl shadow-cyan-500/25">
+                        <span>Elegir Plan Pro</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Paquete 3: E-commerce & Catálogo -->
+            <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 group relative">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-500 group-hover:text-white transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                    </div>
+                    <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider block mb-1">Comercio Global</span>
+                    <h4 class="text-xl font-bold text-white mb-3">E-commerce & Catálogo</h4>
+                    <div class="text-3xl sm:text-4xl font-black text-white tracking-tight bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">Desde $600 <span class="text-xs font-normal text-gray-400">USD</span></div>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-6">Tienda en línea completa orientada a maximizar las ventas de tus productos.</p>
+                    
+                    <ul class="space-y-3 mb-8 text-xs sm:text-sm text-gray-300">
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Catálogo dinámico e ilimitado</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Pasarela de pagos o catálogo a WhatsApp</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Panel de gestión de inventario</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Carga ultrarrápida y seguridad</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-xs text-cyan-400 font-mono mb-4 flex items-center space-x-1.5">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Entrega: 10-15 días hábiles</span>
+                    </div>
+                    <a href="contacto.html" class="w-full py-3.5 px-4 rounded-xl bg-white/5 border border-cyan-500/40 text-cyan-400 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 hover:text-white hover:border-transparent font-semibold text-sm transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg">
+                        <span>Cotizar E-commerce</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Banner Inferior -->
+        <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-cyan-500/40 hover:border-cyan-400 transition-all duration-300 flex flex-col md:flex-row items-center justify-between gap-6 relative group">
+            <div class="flex items-center space-x-5">
+                <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 flex-shrink-0 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-500 group-hover:text-white transition">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-1">Mantenimiento & Soporte Continuo</h4>
+                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">Garantiza el rendimiento, monitoreo 24/7 y copias de seguridad de tu sitio <span class="text-cyan-400 font-bold">desde $30 USD/mes</span>.</p>
+                </div>
+            </div>
+            <div class="flex-shrink-0 w-full md:w-auto">
+                <a href="contacto.html" class="w-full md:w-auto py-3 px-6 rounded-xl bg-white/5 border border-cyan-500/40 text-cyan-400 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 hover:text-white hover:border-transparent font-semibold text-sm transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg">
+                    <span>Consultar Mantenimiento</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto px-6 py-12 text-center border-t border-white/10 relative z-10">
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-sm font-semibold text-gray-300 mb-6">
+            <span class="flex items-center space-x-2.5 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-md shadow-cyan-400"></span>
+                <span class="text-white">Moderno</span>
+            </span>
+            <span class="flex items-center space-x-2.5 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-md shadow-cyan-400"></span>
+                <span class="text-white">Rápido</span>
+            </span>
+            <span class="flex items-center space-x-2.5 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-md shadow-cyan-400"></span>
+                <span class="text-white">Seguro</span>
+            </span>
+            <span class="flex items-center space-x-2.5 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-md shadow-cyan-400"></span>
+                <span class="text-white">Escalable</span>
+            </span>
+        </div>
+
+        <div class="mb-8">
+            <p class="text-xs text-cyan-400 uppercase tracking-widest mb-4 font-semibold">Compártelo en las Redes</p>
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <!-- WhatsApp -->
+                <a href="https://api.whatsapp.com/send?text=Echa%20un%20vistazo%20a%20d-nexus%3A%20https%3A%2F%2Fd-nexus.github.io%2Fdnexus%2F" target="_blank" rel="noopener noreferrer" aria-label="Compartir en WhatsApp" class="w-11 h-11 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-gray-300 hover:text-emerald-400 flex items-center justify-center text-lg transition-all transform hover:-translate-y-1 shadow-md">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fd-nexus.github.io%2Fdnexus%2F" target="_blank" rel="noopener noreferrer" aria-label="Compartir en Facebook" class="w-11 h-11 rounded-xl bg-white/5 hover:bg-blue-600/20 border border-white/10 hover:border-blue-500/40 text-gray-300 hover:text-blue-400 flex items-center justify-center text-lg transition-all transform hover:-translate-y-1 shadow-md">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <!-- Telegram -->
+                <a href="https://t.me/share/url?url=https%3A%2F%2Fd-nexus.github.io%2Fdnexus%2F&text=d-nexus%20-%20Desarrollo%20Web" target="_blank" rel="noopener noreferrer" aria-label="Compartir en Telegram" class="w-11 h-11 rounded-xl bg-white/5 hover:bg-sky-500/20 border border-white/10 hover:border-sky-500/40 text-gray-300 hover:text-sky-400 flex items-center justify-center text-lg transition-all transform hover:-translate-y-1 shadow-md">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fd-nexus.github.io%2Fdnexus%2F" target="_blank" rel="noopener noreferrer" aria-label="Compartir en LinkedIn" class="w-11 h-11 rounded-xl bg-white/5 hover:bg-blue-700/20 border border-white/10 hover:border-blue-600/40 text-gray-300 hover:text-blue-500 flex items-center justify-center text-lg transition-all transform hover:-translate-y-1 shadow-md">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+
+        <p class="text-xs text-gray-400 font-medium">&copy; 2026 D-NEXUS. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Stardust Engine Script -->
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const particleCount = Math.floor((window.innerWidth * window.innerHeight) / 5500);
+        const particles = [];
+        let mouse = { x: width / 2, y: height / 2, tx: width / 2, ty: height / 2 };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        });
+
+        class StardustParticle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.35;
+                this.vy = (Math.random() - 0.5) * 0.35 - 0.1;
+                this.size = Math.random() * 1.5 + 2.0;
+                this.alpha = Math.random() * 0.5 + 0.4;
+                this.color = Math.random() > 0.4 ? 'rgba(0, 210, 255, ' : 'rgba(16, 185, 129, ';
+            }
+            update() {
+                this.x += this.vx + (mouse.x - width / 2) * 0.0001;
+                this.y += this.vy + (mouse.y - height / 2) * 0.0001;
+
+                if (this.x < 0) this.x = width;
+                if (this.x > width) this.x = 0;
+                if (this.y < 0) this.y = height;
+                if (this.y > height) this.y = 0;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color + this.alpha + ')';
+                ctx.shadowBlur = 12;
+                ctx.shadowColor = this.color + '0.9)';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new StardustParticle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            mouse.x += (mouse.tx - mouse.x) * 0.05;
+            mouse.y += (mouse.ty - mouse.y) * 0.05;
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+</html>
