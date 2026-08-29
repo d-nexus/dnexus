@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es" class="dark overflow-x-hidden max-w-full w-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,6 +44,7 @@
             background-attachment: fixed;
             color: #ffffff;
             overflow-x: hidden;
+            max-width: 100vw;
         }
         .glow-effect {
             box-shadow: 0 0 60px -10px rgba(0, 102, 255, 0.35);
@@ -81,17 +82,17 @@
         }
     </style>
 </head>
-<body class="min-h-screen relative selection:bg-blue-600 selection:text-white">
+<body class="min-h-screen relative selection:bg-blue-600 selection:text-white overflow-x-hidden max-w-full w-full">
 
     <!-- Interactive Full-Screen Digital Stardust Background -->
     <canvas id="bg-canvas"></canvas>
 
     <!-- Background Glows -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
-    <div class="absolute top-[30%] left-1/4 w-[600px] h-[600px] bg-indigo-600/10 blur-[180px] rounded-full pointer-events-none z-0"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+    <div class="absolute top-[30%] left-1/4 w-full max-w-[600px] h-[600px] bg-indigo-600/10 blur-[180px] rounded-full pointer-events-none z-0"></div>
 
     <!-- Navbar -->
-    <header class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-50">
+    <header class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-50 w-full overflow-x-hidden">
         <div class="flex items-center space-x-3">
             <img src="img/Logo.jpg" alt="D-Nexus Logo" class="w-10 h-10 rounded-xl object-cover border border-cyan-500/30 shadow-md">
             <span class="text-xl font-bold tracking-tight text-white">D-NEXUS</span>
@@ -121,7 +122,7 @@
     </header>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobileMenu" class="hidden md:hidden max-w-7xl mx-auto px-6 pb-6 relative z-50">
+    <div id="mobileMenu" class="hidden md:hidden max-w-7xl mx-auto px-6 pb-6 relative z-50 w-full overflow-x-hidden">
         <div class="glass-panel p-6 rounded-2xl flex flex-col space-y-3 bg-gray-950/95 border border-cyan-500/40 shadow-2xl">
             <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2 border-b border-white/5">Inicio</a>
             <a href="servicios.html" class="text-sm font-medium text-white hover:text-cyan-400 transition py-2 border-b border-white/5">Servicios y Precios</a>
@@ -138,11 +139,11 @@
     </div>
 
     <!-- Sección Planes y Soluciones Web -->
-    <section id="precios" class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+    <section id="precios" class="max-w-7xl mx-auto px-6 py-20 relative z-10 w-full overflow-x-hidden">
         <div class="text-center mb-16">
             <span class="text-xs font-semibold text-cyan-400 uppercase tracking-widest">Inversión & Valor</span>
-            <h3 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Planes y Soluciones Web</h3>
-            <p class="text-gray-300 text-sm sm:text-base mt-3 max-w-2xl mx-auto">Soluciones escalables adaptadas a las necesidades y objetivos de crecimiento de tu negocio.</p>
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 break-words">Planes y Soluciones Web</h3>
+            <p class="text-gray-300 text-sm sm:text-base mt-3 max-w-2xl mx-auto break-words">Soluciones escalables adaptadas a las necesidades y objetivos de crecimiento de tu negocio.</p>
         </div>
 
         <!-- Grid de 3 tarjetas de precios -->
@@ -155,26 +156,26 @@
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     </div>
                     <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider block mb-1">Esencial</span>
-                    <h4 class="text-xl font-bold text-white mb-3">Landing Page Presencia</h4>
+                    <h4 class="text-xl font-bold text-white mb-3 break-words">Landing Page Presencia</h4>
                     <div class="text-3xl sm:text-4xl font-black text-white tracking-tight bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">Desde $150 <span class="text-xs font-normal text-gray-400">USD</span></div>
-                    <p class="text-xs text-gray-300 leading-relaxed mb-6">Ideal para profesionales independientes, negocios locales y lanzamientos rápidos.</p>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-6 break-words">Ideal para profesionales independientes, negocios locales y lanzamientos rápidos.</p>
                     
                     <ul class="space-y-3 mb-8 text-xs sm:text-sm text-gray-300">
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                            <span>Diseños de 1 página responsive</span>
+                            <span class="break-words">Diseños de 1 página responsive</span>
                         </li>
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                            <span>Optimización SEO básica</span>
+                            <span class="break-words">Optimización SEO básica</span>
                         </li>
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                            <span>Integración directa con WhatsApp</span>
+                            <span class="break-words">Integración directa con WhatsApp</span>
                         </li>
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                            <span>Entrega rápida (3 a 5 días)</span>
+                            <span class="break-words">Entrega rápida (3 a 5 días)</span>
                         </li>
                     </ul>
                 </div>
@@ -200,30 +201,30 @@
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                     </div>
                     <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider block mb-1">Profesional</span>
-                    <h4 class="text-xl font-bold text-white mb-3">Web Corporativa Pro</h4>
+                    <h4 class="text-xl font-bold text-white mb-3 break-words">Web Corporativa Pro</h4>
                     <div class="text-3xl sm:text-4xl font-black text-white tracking-tight bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">Desde $350 <span class="text-xs font-normal text-gray-400">USD</span></div>
-                    <p class="text-xs text-gray-300 leading-relaxed mb-6">La solución completa para PYMEs que buscan una imagen profesional y autogestionable.</p>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-6 break-words">La solución completa para PYMEs que buscan una imagen profesional y autogestionable.</p>
                     
                     <ul class="space-y-3 mb-8 text-xs sm:text-sm text-gray-300">
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                            <span>Hasta 5 páginas integradas</span>
+                            <span class="break-words">Hasta 5 páginas integradas</span>
                         </li>
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                            <span>CMS para editar contenidos</span>
+                            <span class="break-words">CMS para editar contenidos</span>
                         </li>
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                            <span>SEO avanzado y velocidad optimizada</span>
+                            <span class="break-words">SEO avanzado y velocidad optimizada</span>
                         </li>
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                            <span>Correo corporativo y dominio</span>
+                            <span class="break-words">Correo corporativo y dominio</span>
                         </li>
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                            <span>Soporte prioritario</span>
+                            <span class="break-words">Soporte prioritario</span>
                         </li>
                     </ul>
                 </div>
@@ -246,26 +247,26 @@
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
                     </div>
                     <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider block mb-1">Comercio Global</span>
-                    <h4 class="text-xl font-bold text-white mb-3">E-commerce & Catálogo</h4>
+                    <h4 class="text-xl font-bold text-white mb-3 break-words">E-commerce & Catálogo</h4>
                     <div class="text-3xl sm:text-4xl font-black text-white tracking-tight bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">Desde $600 <span class="text-xs font-normal text-gray-400">USD</span></div>
-                    <p class="text-xs text-gray-300 leading-relaxed mb-6">Tienda en línea completa orientada a maximizar las ventas de tus productos.</p>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-6 break-words">Tienda en línea completa orientada a maximizar las ventas de tus productos.</p>
                     
                     <ul class="space-y-3 mb-8 text-xs sm:text-sm text-gray-300">
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                            <span>Catálogo dinámico e ilimitado</span>
+                            <span class="break-words">Catálogo dinámico e ilimitado</span>
                         </li>
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                            <span>Pasarela de pagos o catálogo a WhatsApp</span>
+                            <span class="break-words">Pasarela de pagos o catálogo a WhatsApp</span>
                         </li>
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                            <span>Panel de gestión de inventario</span>
+                            <span class="break-words">Panel de gestión de inventario</span>
                         </li>
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-cyan-400 mt-0.5 flex-shrink-0"></i>
-                            <span>Carga ultrarrápida y seguridad</span>
+                            <span class="break-words">Carga ultrarrápida y seguridad</span>
                         </li>
                     </ul>
                 </div>
@@ -290,8 +291,8 @@
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
                 <div>
-                    <h4 class="text-lg font-bold text-white mb-1">Mantenimiento & Soporte Continuo</h4>
-                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">Garantiza el rendimiento, monitoreo 24/7 y copias de seguridad de tu sitio <span class="text-cyan-400 font-bold">desde $30 USD/mes</span>.</p>
+                    <h4 class="text-lg font-bold text-white mb-1 break-words">Mantenimiento & Soporte Continuo</h4>
+                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed break-words">Garantiza el rendimiento, monitoreo 24/7 y copias de seguridad de tu sitio <span class="text-cyan-400 font-bold">desde $30 USD/mes</span>.</p>
                 </div>
             </div>
             <div class="flex-shrink-0 w-full md:w-auto">
@@ -304,7 +305,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="max-w-7xl mx-auto px-6 py-12 text-center border-t border-white/10 relative z-10">
+    <footer class="max-w-7xl mx-auto px-6 py-12 text-center border-t border-white/10 relative z-10 w-full overflow-x-hidden">
         <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-sm font-semibold text-gray-300 mb-6">
             <span class="flex items-center space-x-2.5 bg-white/5 px-4 py-2 rounded-full border border-white/10">
                 <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-md shadow-cyan-400"></span>
