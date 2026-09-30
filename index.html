@@ -2,8 +2,11 @@
 <html lang="es" class="dark overflow-x-hidden max-w-full w-full">
 <head>
     <meta charset="UTF-8">
+    <!-- Respaldo crítico: si css/styles.css no carga, la página sigue oscura y legible -->
+    <style>body{background-color:#050811;color:#fff;font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif}</style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D-Nexus - Desarrollo Web y Soluciones Tecnológicas</title>
+    <meta name="theme-color" content="#050811">
     <meta name="description" content="D-Nexus diseña y desarrolla sitios web, tiendas online y aplicaciones a medida para negocios que quieren crecer. Cotiza tu proyecto.">
     <link rel="canonical" href="https://d-nexus.github.io/dnexus/">
     <!-- Open Graph / Redes Sociales Meta Tags -->
@@ -11,14 +14,19 @@
     <meta property="og:url" content="https://d-nexus.github.io/dnexus/">
     <meta property="og:title" content="D-Nexus - Desarrollo Web y Soluciones Tecnológicas">
     <meta property="og:description" content="Diseñamos y desarrollamos sitios web, tiendas online y aplicaciones a medida para negocios que quieren crecer.">
-    <meta property="og:image" content="https://d-nexus.github.io/dnexus/img/Logo.jpg">
+    <meta property="og:image" content="https://d-nexus.github.io/dnexus/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="D-Nexus - Desarrollo web y soluciones tecnológicas">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="D-Nexus">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://d-nexus.github.io/dnexus/">
     <meta name="twitter:title" content="D-Nexus - Desarrollo Web y Soluciones Tecnológicas">
     <meta name="twitter:description" content="Diseñamos y desarrollamos sitios web, tiendas online y aplicaciones a medida para negocios que quieren crecer.">
-    <meta name="twitter:image" content="https://d-nexus.github.io/dnexus/img/Logo.jpg">
+    <meta name="twitter:image" content="https://d-nexus.github.io/dnexus/img/og-image.jpg">
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -87,6 +95,7 @@
 
       gtag('config', 'G-SEHNMH3NWE');
     </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://d-nexus.github.io/dnexus/#org", "name": "D-Nexus", "url": "https://d-nexus.github.io/dnexus/", "logo": "https://d-nexus.github.io/dnexus/img/Logo.jpg", "description": "Diseño y desarrollo de sitios web, tiendas online y aplicaciones a medida.", "email": "dnexus.dev@gmail.com", "telephone": "+5351933774", "address": {"@type": "PostalAddress", "streetAddress": "Avellaneda #218", "addressLocality": "Camagüey", "addressCountry": "CU"}, "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+5351933774", "email": "dnexus.dev@gmail.com", "availableLanguage": "es"}}, {"@type": "WebSite", "@id": "https://d-nexus.github.io/dnexus/#website", "url": "https://d-nexus.github.io/dnexus/", "name": "D-Nexus", "inLanguage": "es", "publisher": {"@id": "https://d-nexus.github.io/dnexus/#org"}}]}</script>
 </head>
 <body class="min-h-screen relative selection:bg-blue-600 selection:text-white overflow-x-hidden max-w-full w-full">
 
@@ -319,7 +328,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             
             <!-- Card 1 -->
-            <div class="glass-panel service-box p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 group cursor-pointer" onclick="window.location.href='contacto.html'">
+            <div class="glass-panel service-box p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 group cursor-pointer" onclick="window.location.href='servicios.html'">
                 <div>
                     <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/25 to-blue-600/25 border border-cyan-500/40 flex items-center justify-center text-cyan-400 mb-6 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-400 group-hover:text-white group-hover:shadow-lg group-hover:shadow-cyan-500/40 transition-all duration-300">
                         <i class="fa-solid fa-laptop-code text-2xl"></i>
@@ -328,7 +337,7 @@
                     <p class="text-sm text-gray-300 leading-relaxed break-words">Creación de experiencias digitales atractivas, responsivas y de alta conversión.</p>
                 </div>
                 <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-cyan-400 group-hover:text-white transition">
-                    <span>Saber más</span>
+                    <a href="servicios.html">Saber más</a>
                     <i class="fa-solid fa-arrow-right text-[10px] transform group-hover:translate-x-1.5 transition"></i>
                 </div>
             </div>
@@ -375,7 +384,7 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="glass-panel service-box p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 group cursor-pointer" onclick="window.location.href='contacto.html'">
+            <div class="glass-panel service-box p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 group cursor-pointer" onclick="window.location.href='servicios.html'">
                 <div>
                     <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/25 to-blue-600/25 border border-cyan-500/40 flex items-center justify-center text-cyan-400 mb-6 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-400 group-hover:text-white group-hover:shadow-lg group-hover:shadow-cyan-500/40 transition-all duration-300">
                         <i class="fa-solid fa-cart-shopping text-2xl"></i>
@@ -384,13 +393,13 @@
                     <p class="text-sm text-gray-300 leading-relaxed break-words">Tiendas online robustas y optimizadas para transacciones seguras y fluidas.</p>
                 </div>
                 <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-cyan-400 group-hover:text-white transition">
-                    <span>Saber más</span>
+                    <a href="servicios.html">Saber más</a>
                     <i class="fa-solid fa-arrow-right text-[10px] transform group-hover:translate-x-1.5 transition"></i>
                 </div>
             </div>
 
             <!-- Card 4 -->
-            <div class="glass-panel service-box p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 group cursor-pointer" onclick="window.location.href='contacto.html'">
+            <div class="glass-panel service-box p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 group cursor-pointer" onclick="window.location.href='servicios.html'">
                 <div>
                     <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/25 to-blue-600/25 border border-cyan-500/40 flex items-center justify-center text-cyan-400 mb-6 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-400 group-hover:text-white group-hover:shadow-lg group-hover:shadow-cyan-500/40 transition-all duration-300">
                         <i class="fa-solid fa-headset text-2xl"></i>
@@ -399,7 +408,7 @@
                     <p class="text-sm text-gray-300 leading-relaxed break-words">Asistencia técnica y mantenimiento mensual para mantener tu plataforma estable y rápida.</p>
                 </div>
                 <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-cyan-400 group-hover:text-white transition">
-                    <span>Saber más</span>
+                    <a href="servicios.html">Saber más</a>
                     <i class="fa-solid fa-arrow-right text-[10px] transform group-hover:translate-x-1.5 transition"></i>
                 </div>
             </div>
