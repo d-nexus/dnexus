@@ -46,3 +46,37 @@ body::before {
 .faq-icon { transition: transform 0.25s ease; }
 .faq-item[open] .faq-icon { transform: rotate(180deg); }
 .faq-a { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; line-height: 1.65; color: #d1d5db; }
+
+/* ---- Tarjetas: brillo sobrio (el neón fuerte queda para los botones) ---- */
+.card, .service-box, .about-box, .glass-panel {
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.05) 0%, rgba(10, 20, 40, 0.20) 100%);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(0, 243, 255, 0.22);
+    border-radius: 24px;
+    box-shadow: 0 0 18px rgba(0, 243, 255, 0.06), inset 0 0 12px rgba(0, 243, 255, 0.04), 0 16px 32px rgba(0, 0, 0, 0.45);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.about-box { background: rgba(5, 10, 25, 0.4); }
+.service-box { position: relative; }
+/* Elevación solo en tarjetas interactivas (no en paneles de lectura como los legales) */
+.card:hover, .service-box:hover, .about-box:hover, .glass-panel.group:hover {
+    border-color: rgba(0, 243, 255, 0.6);
+    box-shadow: 0 0 28px rgba(0, 243, 255, 0.16), inset 0 0 14px rgba(0, 243, 255, 0.08), 0 20px 40px rgba(0, 0, 0, 0.55);
+    transform: translateY(-3px);
+}
+
+/* Tarjeta completa clicable con un enlace real (accesible con teclado) */
+.card-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+
+/* Accesibilidad: foco visible y salto al contenido */
+:focus-visible { outline: 2px solid #00d2ff; outline-offset: 3px; border-radius: 6px; }
+.skip-link {
+    position: absolute; left: 1rem; top: -4rem; z-index: 100;
+    padding: 0.6rem 1rem; border-radius: 0.75rem;
+    background: #00d2ff; color: #050811; font-weight: 700; font-size: 0.875rem;
+    transition: top 0.2s ease;
+}
+.skip-link:focus { top: 1rem; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
