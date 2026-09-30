@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aviso Legal - D-Nexus</title>
+    <meta name="description" content="Aviso legal de D-Nexus: actividad, transparencia comercial y canales oficiales de contacto.">
+    <link rel="canonical" href="https://d-nexus.github.io/dnexus/aviso-legal.html">
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -27,24 +29,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/favicon.png">
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-image: linear-gradient(to bottom, rgba(5, 8, 17, 0.88), rgba(5, 8, 17, 0.98)), url('img/fondo.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #ffffff;
-            overflow-x: hidden;
-            max-width: 100vw;
-        }
-        .glow-effect {
-            box-shadow: 0 0 60px -10px rgba(0, 102, 255, 0.35);
-        }
-        .glass-panel {
+    <link rel="stylesheet" href="css/styles.css">
+    <style>.glass-panel {
             background: linear-gradient(135deg, rgba(0, 243, 255, 0.06) 0%, rgba(10, 20, 40, 0.18) 100%);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -55,30 +46,7 @@
                 inset 0 0 15px rgba(0, 243, 255, 0.1),
                 0 20px 40px rgba(0, 0, 0, 0.6);
         }
-        .legal-links {
-            margin-bottom: 1.5rem;
-            font-size: 0.875rem;
-            color: #9ca3af;
-        }
-        .legal-links a {
-            color: #00d2ff;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        .legal-links a:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-        #bg-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 1;
-        }
-    </style>
+</style>
 </head>
 <body class="min-h-screen relative selection:bg-blue-600 selection:text-white overflow-x-hidden max-w-full w-full">
 
@@ -91,7 +59,7 @@
     <!-- Navbar -->
     <header class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-50 w-full overflow-x-hidden">
         <div class="flex items-center space-x-3">
-            <img src="img/Logo.jpg" alt="D-Nexus Logo" class="w-10 h-10 rounded-xl object-cover border border-cyan-500/30 shadow-md">
+            <img src="img/Logo.jpg" width="40" height="40" alt="D-Nexus Logo" class="w-10 h-10 rounded-xl object-cover border border-cyan-500/30 shadow-md">
             <span class="text-xl font-bold tracking-tight text-white">D-NEXUS</span>
         </div>
 
@@ -218,92 +186,10 @@
     </footer>
 
     <!-- Stardust Engine & Mobile Menu Script -->
-    <script>
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                const icon = mobileMenuBtn.querySelector('i');
-                if (mobileMenu.classList.contains('hidden')) {
-                    icon.classList.remove('fa-xmark');
-                    icon.classList.add('fa-bars');
-                } else {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-xmark');
-                }
-            });
-        }
-
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let width, height;
-
-        function resizeCanvas() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        const particleCount = Math.floor((window.innerWidth * window.innerHeight) / 5500);
-        const particles = [];
-        let mouse = { x: width / 2, y: height / 2, tx: width / 2, ty: height / 2 };
-
-        window.addEventListener('mousemove', (e) => {
-            mouse.tx = e.clientX;
-            mouse.ty = e.clientY;
-        });
-
-        class StardustParticle {
-            constructor() {
-                this.reset();
-            }
-            reset() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.35;
-                this.vy = (Math.random() - 0.5) * 0.35 - 0.1;
-                this.size = Math.random() * 1.5 + 2.0;
-                this.alpha = Math.random() * 0.5 + 0.4;
-                this.color = Math.random() > 0.4 ? 'rgba(0, 210, 255, ' : 'rgba(16, 185, 129, ';
-            }
-            update() {
-                this.x += this.vx + (mouse.x - width / 2) * 0.0001;
-                this.y += this.vy + (mouse.y - height / 2) * 0.0001;
-
-                if (this.x < 0) this.x = width;
-                if (this.x > width) this.x = 0;
-                if (this.y < 0) this.y = height;
-                if (this.y > height) this.y = 0;
-            }
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = this.color + this.alpha + ')';
-                ctx.shadowBlur = 12;
-                ctx.shadowColor = this.color + '0.9)';
-                ctx.fill();
-            }
-        }
-
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new StardustParticle());
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-            mouse.x += (mouse.tx - mouse.x) * 0.05;
-            mouse.y += (mouse.ty - mouse.y) * 0.05;
-
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-
-            requestAnimationFrame(animate);
-        }
-        animate();
-    </script>
-</body>
+    <script src="main.js" defer></script>
+<!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5351933774?text=Hola%20D-Nexus%2C%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener noreferrer" class="wa-float" data-track="whatsapp_float" aria-label="Escríbenos por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    </body>
 </html>
