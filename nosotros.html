@@ -24,7 +24,24 @@
     <meta name="twitter:image" content="https://d-nexus.github.io/dnexus/img/og-image.jpg">
 
     <!-- Tailwind CSS Play CDN -->
-<!-- Favicon -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#050811',
+                        cardBg: 'rgba(255, 255, 255, 0.03)',
+                        cardBorder: 'rgba(255, 255, 255, 0.08)',
+                        accentBlue: '#0066ff',
+                        accentCyan: '#00d2ff',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/favicon.png">
@@ -45,7 +62,6 @@
 
       gtag('config', 'G-SEHNMH3NWE');
     </script>
-    <link rel="stylesheet" href="css/tailwind.css">
 </head>
 <body class="min-h-screen relative selection:bg-blue-600 selection:text-white overflow-x-hidden max-w-full w-full">
     <a href="#contenido" class="skip-link">Saltar al contenido</a>
@@ -64,16 +80,17 @@
             <span class="text-xl font-bold tracking-tight text-white">D-NEXUS</span>
         </div>
 
-        <nav aria-label="Principal" class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-300">
+        <nav aria-label="Principal" class="hidden lg:flex items-center space-x-6 text-sm font-medium text-gray-300">
             <a href="index.html" class="hover:text-cyan-400 transition">Inicio</a>
             <a href="servicios.html" class="hover:text-cyan-400 transition">Servicios y Precios</a>
+            <a href="sistemas-gestion.html" class="hover:text-cyan-400 transition">Sistemas de Gestión</a>
             <a href="nosotros.html" aria-current="page" class="text-white hover:text-cyan-400 transition text-cyan-400">Nosotros</a>
             <a href="portafolio.html" class="hover:text-cyan-400 transition">Portafolio</a>
             <a href="contacto.html" class="hover:text-cyan-400 transition">Contacto</a>
         </nav>
 
         <div class="flex items-center space-x-3">
-            <div class="hidden md:block">
+            <div class="hidden lg:block">
                 <a href="contacto.html" class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 shadow-lg shadow-cyan-500/25 transition transform hover:-translate-y-0.5">
                     <span>Cotizar Proyecto</span>
                     <i class="fa-solid fa-arrow-right text-xs"></i>
@@ -81,17 +98,18 @@
             </div>
 
             <!-- Hamburger Button -->
-            <button id="mobileMenuBtn" aria-label="Abrir menú" class="md:hidden w-10 h-10 rounded-xl bg-white/5 border border-cyan-500/30 text-cyan-400 flex items-center justify-center hover:bg-cyan-500/15 transition">
+            <button id="mobileMenuBtn" aria-label="Abrir menú" class="lg:hidden w-10 h-10 rounded-xl bg-white/5 border border-cyan-500/30 text-cyan-400 flex items-center justify-center hover:bg-cyan-500/15 transition">
                 <i class="fa-solid fa-bars text-lg"></i>
             </button>
         </div>
     </header>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobileMenu" class="hidden md:hidden max-w-7xl mx-auto px-6 pb-6 relative z-50 w-full">
+    <div id="mobileMenu" class="hidden lg:hidden max-w-7xl mx-auto px-6 pb-6 relative z-50 w-full">
         <div class="glass-panel p-6 rounded-2xl flex flex-col space-y-3 bg-gray-950/95 border border-cyan-500/40 shadow-2xl">
             <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2 border-b border-white/5">Inicio</a>
             <a href="servicios.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2 border-b border-white/5">Servicios y Precios</a>
+            <a href="sistemas-gestion.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2 border-b border-white/5">Sistemas de Gestión</a>
             <a href="nosotros.html" aria-current="page" class="text-sm font-medium text-white hover:text-cyan-400 transition py-2 border-b border-white/5 text-cyan-400">Nosotros</a>
             <a href="portafolio.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2 border-b border-white/5">Portafolio</a>
             <a href="contacto.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2">Contacto</a>

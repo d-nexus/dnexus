@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es" class="dark overflow-x-hidden max-w-full w-full">
+<head>
+    <meta charset="UTF-8">
+    <!-- Respaldo crítico: si css/styles.css no carga, la página sigue oscura y legible -->
+    <style>body{background-color:#050811;color:#fff;font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Gestión para tu Negocio (POS, Inventario y Contabilidad) - D-Nexus</title>
+    <meta name="theme-color" content="#050811">
+    <meta name="description" content="Implementamos un sistema de gestión basado en Odoo para cafeterías, restaurantes y tiendas: punto de venta, inventario, compras, ventas y contabilidad, con capacitación y soporte.">
+    <link rel="canonical" href="https://d-nexus.github.io/dnexus/sistemas-gestion.html">
+    <!-- Open Graph / Redes Sociales Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://d-nexus.github.io/dnexus/sistemas-gestion.html">
+    <meta property="og:title" content="Sistemas de Gestión para tu Negocio (POS, Inventario y Contabilidad) - D-Nexus">
+    <meta property="og:description" content="Implementamos un sistema de gestión basado en Odoo para cafeterías, restaurantes y tiendas: punto de venta, inventario, compras, ventas y contabilidad, con capacitación y soporte.">
+    <meta property="og:image" content="https://d-nexus.github.io/dnexus/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="D-Nexus - Desarrollo web y soluciones tecnológicas">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="D-Nexus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://d-nexus.github.io/dnexus/img/og-image.jpg">
+
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#050811',
+                        cardBg: 'rgba(255, 255, 255, 0.03)',
+                        cardBorder: 'rgba(255, 255, 255, 0.08)',
+                        accentBlue: '#0066ff',
+                        accentCyan: '#00d2ff',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEHNMH3NWE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SEHNMH3NWE');
+    </script>
+</head>
+<body class="min-h-screen relative selection:bg-blue-600 selection:text-white overflow-x-hidden max-w-full w-full">
+    <a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+    <!-- Interactive Full-Screen Digital Stardust Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Background Glows -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+    <div class="absolute top-[30%] left-1/4 w-full max-w-[600px] h-[600px] bg-indigo-600/10 blur-[180px] rounded-full pointer-events-none z-0"></div>
+
+    <!-- Navbar -->
+    <header class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-50 w-full">
+        <div class="flex items-center space-x-3">
+            <img src="img/Logo.jpg" width="40" height="40" alt="D-Nexus Logo" class="w-10 h-10 rounded-xl object-cover border border-cyan-500/30 shadow-md">
+            <span class="text-xl font-bold tracking-tight text-white">D-NEXUS</span>
+        </div>
+
+        <nav aria-label="Principal" class="hidden lg:flex items-center space-x-6 text-sm font-medium text-gray-300">
+            <a href="index.html" class="hover:text-cyan-400 transition">Inicio</a>
+            <a href="servicios.html" class="hover:text-cyan-400 transition">Servicios y Precios</a>
+            <a href="sistemas-gestion.html" aria-current="page" class="text-white hover:text-cyan-400 transition text-cyan-400">Sistemas de Gestión</a>
+            <a href="nosotros.html" class="hover:text-cyan-400 transition">Nosotros</a>
+            <a href="portafolio.html" class="hover:text-cyan-400 transition">Portafolio</a>
+            <a href="contacto.html" class="hover:text-cyan-400 transition">Contacto</a>
+        </nav>
+
+        <div class="flex items-center space-x-3">
+            <div class="hidden lg:block">
+                <a href="contacto.html" class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 shadow-lg shadow-cyan-500/25 transition transform hover:-translate-y-0.5">
+                    <span>Cotizar Proyecto</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button id="mobileMenuBtn" aria-label="Abrir menú" class="lg:hidden w-10 h-10 rounded-xl bg-white/5 border border-cyan-500/30 text-cyan-400 flex items-center justify-center hover:bg-cyan-500/15 transition">
+                <i class="fa-solid fa-bars text-lg"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden max-w-7xl mx-auto px-6 pb-6 relative z-50 w-full">
+        <div class="glass-panel p-6 rounded-2xl flex flex-col space-y-3 bg-gray-950/95 border border-cyan-500/40 shadow-2xl">
+            <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2 border-b border-white/5">Inicio</a>
+            <a href="servicios.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2 border-b border-white/5">Servicios y Precios</a>
+            <a href="sistemas-gestion.html" aria-current="page" class="text-sm font-medium text-cyan-400 hover:text-cyan-400 transition py-2 border-b border-white/5">Sistemas de Gestión</a>
+            <a href="nosotros.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2 border-b border-white/5">Nosotros</a>
+            <a href="portafolio.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2 border-b border-white/5">Portafolio</a>
+            <a href="contacto.html" class="text-sm font-medium text-gray-300 hover:text-cyan-400 transition py-2">Contacto</a>
+            <div class="pt-2">
+                <a href="contacto.html" class="w-full inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 shadow-lg shadow-cyan-500/25 transition">
+                    <span>Cotizar Proyecto</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Planes y Soluciones Web -->
+    <span id="contenido"></span>
+    <main>
+    <section class="max-w-5xl mx-auto px-6 pt-8 pb-20 text-center relative z-10">
+        <span class="inline-flex items-center space-x-2 text-xs font-semibold text-cyan-300 bg-cyan-500/10 border border-cyan-400/40 px-4 py-1.5 rounded-full mb-6"><i class="fa-solid fa-sparkles"></i><span>Nuevo servicio</span></span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-6">Un solo sistema para vender, comprar y controlar tu negocio</h1>
+        <p class="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto mb-8 leading-relaxed">Implementamos y configuramos un sistema de gestión basado en Odoo: punto de venta, inventario, compras, ventas y contabilidad, con capacitación para tu equipo y soporte mensual. Para cafeterías, restaurantes, tiendas y más.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="contacto.html?tipo=sistema#formulario" class="inline-flex items-center justify-center space-x-2 px-7 py-3.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 shadow-lg shadow-cyan-500/25 transition transform hover:-translate-y-0.5"><span>Solicitar cotización</span><i class="fa-solid fa-arrow-right text-xs"></i></a>
+            <a href="#precios" class="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-sm font-semibold text-cyan-300 border border-cyan-400/50 hover:bg-cyan-400/10 transition"><span>Ver precios</span></a>
+        </div>
+    </section>
+
+    <section id="para-quien" class="max-w-6xl mx-auto px-6 pb-20 relative z-10 ">
+        <div class="text-center mb-10">
+            <span class="text-xs font-semibold text-cyan-400 uppercase tracking-widest">Para quién</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">Pensado para negocios que venden y manejan inventario</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"><div class="card p-6"><i class="fa-solid fa-mug-hot text-cyan-400 text-xl mb-3"></i><h3 class="text-base font-bold text-white mb-1">Cafeterías y bares</h3><p class="text-sm text-gray-300">Carta, insumos, caja y control de existencias.</p></div><div class="card p-6"><i class="fa-solid fa-utensils text-cyan-400 text-xl mb-3"></i><h3 class="text-base font-bold text-white mb-1">Restaurantes</h3><p class="text-sm text-gray-300">Mesas, comandas, propinas y control de cocina e insumos.</p></div><div class="card p-6"><i class="fa-solid fa-store text-cyan-400 text-xl mb-3"></i><h3 class="text-base font-bold text-white mb-1">Tiendas y comercios</h3><p class="text-sm text-gray-300">Catálogo, inventario, compras y ventas en un solo lugar.</p></div><div class="card p-6"><i class="fa-solid fa-briefcase text-cyan-400 text-xl mb-3"></i><h3 class="text-base font-bold text-white mb-1">Otros negocios</h3><p class="text-sm text-gray-300">Si vendes y manejas inventario, lo evaluamos contigo.</p></div></div>
+    </section>
+
+    
+    <section id="modulos" class="max-w-6xl mx-auto px-6 pb-20 relative z-10 ">
+        <div class="text-center mb-10">
+            <span class="text-xs font-semibold text-cyan-400 uppercase tracking-widest">Qué incluye</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">Todo lo que necesitas, conectado entre sí</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"><div class="card p-6 sm:p-7"><span class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4"><i class="fa-solid fa-cash-register"></i></span><h3 class="text-base font-bold text-white mb-2">Punto de venta</h3><p class="text-sm text-gray-300 leading-relaxed">Caja, métodos de pago, cierres y, para restaurantes y bares, mesas y plano de sala.</p></div><div class="card p-6 sm:p-7"><span class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4"><i class="fa-solid fa-boxes-stacked"></i></span><h3 class="text-base font-bold text-white mb-2">Inventario</h3><p class="text-sm text-gray-300 leading-relaxed">Existencias por producto, entradas y salidas, y control de insumos.</p></div><div class="card p-6 sm:p-7"><span class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4"><i class="fa-solid fa-truck-ramp-box"></i></span><h3 class="text-base font-bold text-white mb-2">Compras y proveedores</h3><p class="text-sm text-gray-300 leading-relaxed">Órdenes de compra, recepción de mercancía y registro de proveedores.</p></div><div class="card p-6 sm:p-7"><span class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4"><i class="fa-solid fa-handshake"></i></span><h3 class="text-base font-bold text-white mb-2">Ventas y clientes</h3><p class="text-sm text-gray-300 leading-relaxed">Cotizaciones, pedidos, facturación y ficha de clientes.</p></div><div class="card p-6 sm:p-7"><span class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4"><i class="fa-solid fa-scale-balanced"></i></span><h3 class="text-base font-bold text-white mb-2">Contabilidad</h3><p class="text-sm text-gray-300 leading-relaxed">Diarios, plan de cuentas, impuestos y moneda adaptados a tu país.</p></div><div class="card p-6 sm:p-7"><span class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4"><i class="fa-solid fa-user-shield"></i></span><h3 class="text-base font-bold text-white mb-2">Usuarios y permisos</h3><p class="text-sm text-gray-300 leading-relaxed">Roles para cajeros, encargados y administradores, cada uno con su acceso.</p></div><div class="card p-6 sm:p-7"><span class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4"><i class="fa-solid fa-chart-column"></i></span><h3 class="text-base font-bold text-white mb-2">Reportes</h3><p class="text-sm text-gray-300 leading-relaxed">Ventas, existencias y caja a la vista para decidir con datos.</p></div><div class="card p-6 sm:p-7"><span class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4"><i class="fa-solid fa-palette"></i></span><h3 class="text-base font-bold text-white mb-2">Personalización</h3><p class="text-sm text-gray-300 leading-relaxed">Ajustes de interfaz e identidad visual de tu negocio.</p></div></div><p class="text-xs text-gray-500 text-center mt-6">Configuramos solo los módulos que tu negocio necesita; el alcance exacto se define en tu propuesta.</p>
+    </section>
+
+    
+    <section id="proceso" class="max-w-6xl mx-auto px-6 pb-20 relative z-10 ">
+        <div class="text-center mb-10">
+            <span class="text-xs font-semibold text-cyan-400 uppercase tracking-widest">Cómo trabajamos</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">De la idea a tu negocio funcionando</h2>
+        </div>
+        <ol class="grid grid-cols-1 md:grid-cols-2 gap-5"><li class="card p-6 flex items-start space-x-4"><span class="w-9 h-9 flex-shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 text-white text-sm font-bold flex items-center justify-center">1</span><div><h3 class="text-base font-bold text-white mb-1">Levantamiento</h3><p class="text-sm text-gray-300">Entendemos cómo vendes, compras y controlas hoy tu negocio.</p></div></li><li class="card p-6 flex items-start space-x-4"><span class="w-9 h-9 flex-shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 text-white text-sm font-bold flex items-center justify-center">2</span><div><h3 class="text-base font-bold text-white mb-1">Configuración</h3><p class="text-sm text-gray-300">Instalamos y dejamos listos productos, caja, impuestos, usuarios y permisos.</p></div></li><li class="card p-6 flex items-start space-x-4"><span class="w-9 h-9 flex-shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 text-white text-sm font-bold flex items-center justify-center">3</span><div><h3 class="text-base font-bold text-white mb-1">Migración inicial</h3><p class="text-sm text-gray-300">Cargamos tus productos, proveedores, clientes e inventario de partida.</p></div></li><li class="card p-6 flex items-start space-x-4"><span class="w-9 h-9 flex-shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 text-white text-sm font-bold flex items-center justify-center">4</span><div><h3 class="text-base font-bold text-white mb-1">Pruebas</h3><p class="text-sm text-gray-300">Probamos juntos las ventas, compras y cierres antes de abrir.</p></div></li><li class="card p-6 flex items-start space-x-4"><span class="w-9 h-9 flex-shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 text-white text-sm font-bold flex items-center justify-center">5</span><div><h3 class="text-base font-bold text-white mb-1">Capacitación</h3><p class="text-sm text-gray-300">Enseñamos a tu equipo a vender, cerrar caja, recibir mercancía y ver reportes.</p></div></li><li class="card p-6 flex items-start space-x-4"><span class="w-9 h-9 flex-shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 text-white text-sm font-bold flex items-center justify-center">6</span><div><h3 class="text-base font-bold text-white mb-1">Puesta en marcha y soporte</h3><p class="text-sm text-gray-300">Salimos a producción y te acompañamos con un plan mensual.</p></div></li></ol>
+    </section>
+
+    
+    <section id="precios" class="max-w-6xl mx-auto px-6 pb-20 relative z-10 ">
+        <div class="text-center mb-10">
+            <span class="text-xs font-semibold text-cyan-400 uppercase tracking-widest">Precios</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">Una implementación y un plan mensual a tu medida</h2>
+        </div>
+        <div class="glass-panel p-7 sm:p-9 rounded-3xl mb-8 text-center">
+            <p class="text-xs text-cyan-400 font-semibold uppercase tracking-widest mb-2">Implementación (pago único)</p>
+            <p class="text-4xl font-extrabold text-white">Desde $1,500 <span class="text-sm font-normal text-gray-400">USD</span></p>
+            <p class="text-sm text-gray-300 mt-3 max-w-2xl mx-auto">Incluye levantamiento, instalación y configuración, migración inicial de datos, pruebas, capacitación y puesta en marcha. El precio final depende del alcance y te lo damos cerrado antes de empezar.</p>
+        </div>
+        <p class="text-center text-sm text-gray-400 mb-6">Después, elige tu plan mensual:</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5"><div class="card p-7 flex flex-col"><h3 class="text-lg font-bold text-white">Esencial</h3><p class="text-xs text-gray-400 mb-4">Para empezar con lo necesario</p><p class="text-3xl font-extrabold text-white mb-1">$60 <span class="text-xs font-normal text-gray-400">USD / mes</span></p><ul class="space-y-3 text-sm text-gray-300 mt-5 flex-1"><li class="flex items-start space-x-3"><i class="fa-solid fa-check text-cyan-400 mt-1 text-xs flex-shrink-0"></i><span>Alojamiento del sistema (hosting)</span></li><li class="flex items-start space-x-3"><i class="fa-solid fa-check text-cyan-400 mt-1 text-xs flex-shrink-0"></i><span>Copias de seguridad</span></li><li class="flex items-start space-x-3"><i class="fa-solid fa-check text-cyan-400 mt-1 text-xs flex-shrink-0"></i><span>Actualizaciones menores</span></li><li class="flex items-start space-x-3"><i class="fa-solid fa-check text-cyan-400 mt-1 text-xs flex-shrink-0"></i><span>Soporte por mensaje en horario laboral</span></li></ul></div><div class="glass-panel p-7 flex flex-col"><span class="inline-block text-[11px] font-bold text-cyan-300 bg-cyan-500/15 border border-cyan-400/40 px-3 py-1 rounded-full mb-3">Más elegido</span><h3 class="text-lg font-bold text-white">Business</h3><p class="text-xs text-gray-400 mb-4">El más equilibrado</p><p class="text-3xl font-extrabold text-white mb-1">$120 <span class="text-xs font-normal text-gray-400">USD / mes</span></p><ul class="space-y-3 text-sm text-gray-300 mt-5 flex-1"><li class="flex items-start space-x-3"><i class="fa-solid fa-check text-cyan-400 mt-1 text-xs flex-shrink-0"></i><span>Todo lo de Esencial</span></li><li class="flex items-start space-x-3"><i class="fa-solid fa-check text-cyan-400 mt-1 text-xs flex-shrink-0"></i><span>Soporte prioritario</span></li><li class="flex items-start space-x-3"><i class="fa-solid fa-check text-cyan-400 mt-1 text-xs flex-shrink-0"></i><span>Corrección de errores</span></li><li class="flex items-start space-x-3"><i class="fa-solid fa-check text-cyan-400 mt-1 text-xs flex-shrink-0"></i><span>Monitoreo del sistema</span></li><li class="flex items-start space-x-3"><i class="fa-solid fa-check text-cyan-400 mt-1 text-xs flex-shrink-0"></i><span>Hasta 2 horas al mes de ajustes menores</span></li></ul></div><div class="card p-7 flex flex-col"><h3 class="text-lg font-bold text-white">Premium</h3><p class="text-xs text-gray-400 mb-4">Para negocios que evolucionan</p><p class="text-3xl font-extrabold text-white mb-1">$200 <span class="text-xs font-normal text-gray-400">USD / mes</span></p><ul class="space-y-3 text-sm text-gray-300 mt-5 flex-1"><li class="flex items-start space-x-3"><i class="fa-solid fa-check text-cyan-400 mt-1 text-xs flex-shrink-0"></i><span>Todo lo de Business</span></li><li class="flex items-start space-x-3"><i class="fa-solid fa-check text-cyan-400 mt-1 text-xs flex-shrink-0"></i><span>Hasta 5 horas al mes de ajustes y mejoras</span></li><li class="flex items-start space-x-3"><i class="fa-solid fa-check text-cyan-400 mt-1 text-xs flex-shrink-0"></i><span>Consultoría mensual</span></li><li class="flex items-start space-x-3"><i class="fa-solid fa-check text-cyan-400 mt-1 text-xs flex-shrink-0"></i><span>Atención preferencial</span></li></ul></div></div>
+        <p class="text-xs text-gray-500 mt-5 text-center">Precios en USD. No incluye desarrollos a medida, capacitación adicional ni migraciones de gran volumen: se cotizan por separado.</p>
+    </section>
+
+    
+    <section id="transparencia" class="max-w-4xl mx-auto px-6 pb-20 relative z-10">
+        <div class="card p-7 sm:p-9">
+            <h2 class="text-lg font-bold text-white mb-3 flex items-center space-x-3"><i class="fa-solid fa-circle-info text-cyan-400"></i><span>Transparencia sobre el software</span></h2>
+            <ul class="space-y-3 text-sm text-gray-300 leading-relaxed">
+                <li><strong class="text-white">Odoo</strong> es la plataforma base y una marca de Odoo S.A. D-Nexus es un proveedor de servicios independiente y no vende licencias de Odoo.</li>
+                <li><strong class="text-white">D-Nexus</strong> cobra su trabajo: implementación, configuración, personalización, alojamiento, capacitación y soporte.</li>
+                <li><strong class="text-white">Módulos o desarrollos propios</strong> de D-Nexus, si los hubiera en tu proyecto, se rigen por la licencia de uso que se indique en tu propuesta. Más detalles en los <a href="terminos.html" class="text-cyan-400 hover:underline">Términos y Condiciones</a>.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="faq" class="max-w-6xl mx-auto px-6 pb-20 relative z-10 ">
+        <div class="text-center mb-10">
+            <span class="text-xs font-semibold text-cyan-400 uppercase tracking-widest">FAQ</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">Preguntas frecuentes</h2>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-3"><details class="faq-item group"><summary class="faq-q"><span>¿Esto es Odoo? ¿Me venden una licencia?</span><i class="fa-solid fa-chevron-down text-xs text-cyan-400 faq-icon" aria-hidden="true"></i></summary><p class="faq-a">El sistema se basa en Odoo, un software de gestión empresarial. Nosotros no vendemos ni revendemos licencias de Odoo: cobramos nuestro trabajo de implementación, configuración, personalización, alojamiento, capacitación y soporte. Odoo es una marca de Odoo S.A. y D-Nexus es un proveedor de servicios independiente.</p></details><details class="faq-item group"><summary class="faq-q"><span>¿Qué incluye el pago de implementación?</span><i class="fa-solid fa-chevron-down text-xs text-cyan-400 faq-icon" aria-hidden="true"></i></summary><p class="faq-a">Levantamiento de necesidades, instalación y configuración, carga inicial de productos y datos, pruebas, capacitación de tu equipo y puesta en marcha. Los desarrollos a medida adicionales se cotizan por separado.</p></details><details class="faq-item group"><summary class="faq-q"><span>¿Cuánto cuesta?</span><i class="fa-solid fa-chevron-down text-xs text-cyan-400 faq-icon" aria-hidden="true"></i></summary><p class="faq-a">La implementación parte desde US$1,500 y el precio final depende del alcance: cantidad de productos, usuarios, módulos y personalizaciones. Después eliges un plan mensual de US$60, US$120 o US$200. Te damos una cotización cerrada antes de empezar.</p></details><details class="faq-item group"><summary class="faq-q"><span>¿Dónde queda alojado mi sistema?</span><i class="fa-solid fa-chevron-down text-xs text-cyan-400 faq-icon" aria-hidden="true"></i></summary><p class="faq-a">En un servidor administrado por D-Nexus, con copias de seguridad, según el plan mensual que elijas. Tus datos de negocio son tuyos y puedes pedirnos una copia.</p></details><details class="faq-item group"><summary class="faq-q"><span>¿Trabajan con negocios de otros países?</span><i class="fa-solid fa-chevron-down text-xs text-cyan-400 faq-icon" aria-hidden="true"></i></summary><p class="faq-a">Sí. La implementación y la capacitación se hacen de forma remota y configuramos moneda, impuestos y métodos de pago según tu país.</p></details><details class="faq-item group"><summary class="faq-q"><span>¿Qué pasa si necesito algo nuevo después?</span><i class="fa-solid fa-chevron-down text-xs text-cyan-400 faq-icon" aria-hidden="true"></i></summary><p class="faq-a">Las funciones nuevas o personalizaciones fuera de las horas incluidas en tu plan se cotizan aparte, por precio cerrado o por hora, siempre antes de empezar.</p></details><details class="faq-item group"><summary class="faq-q"><span>¿Y si el sistema se detiene en pleno servicio?</span><i class="fa-solid fa-chevron-down text-xs text-cyan-400 faq-icon" aria-hidden="true"></i></summary><p class="faq-a">El soporte funciona en horario laboral y prioriza según gravedad: primero lo que impide vender. Los detalles de tiempos de respuesta se acuerdan por escrito en tu propuesta.</p></details></div>
+    </section>
+
+    
+    <section class="max-w-4xl mx-auto px-6 pb-24 relative z-10 text-center">
+        <div class="glass-panel p-8 sm:p-12 rounded-3xl">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">Cuéntanos cómo funciona tu negocio</h2>
+            <p class="text-sm sm:text-base text-gray-300 mb-8 max-w-xl mx-auto">Te respondemos con una propuesta y un precio cerrado, sin compromiso.</p>
+            <a href="contacto.html?tipo=sistema#formulario" class="inline-flex items-center justify-center space-x-2 px-7 py-3.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-400 shadow-lg shadow-cyan-500/25 transition transform hover:-translate-y-0.5"><span>Solicitar cotización</span><i class="fa-solid fa-arrow-right text-xs"></i></a>
+        </div>
+    </section>
+    </main>
+
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Sistema de gestión para negocios basado en Odoo", "serviceType": "Implementación de ERP, punto de venta e inventario", "provider": {"@type": "Organization", "name": "D-Nexus", "url": "https://d-nexus.github.io/dnexus/"}, "areaServed": "Worldwide", "description": "Implementamos un sistema de gestión basado en Odoo para cafeterías, restaurantes y tiendas: punto de venta, inventario, compras, ventas y contabilidad, con capacitación y soporte.", "offers": {"@type": "Offer", "priceCurrency": "USD", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 1500, "priceCurrency": "USD"}}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Esto es Odoo? ¿Me venden una licencia?", "acceptedAnswer": {"@type": "Answer", "text": "El sistema se basa en Odoo, un software de gestión empresarial. Nosotros no vendemos ni revendemos licencias de Odoo: cobramos nuestro trabajo de implementación, configuración, personalización, alojamiento, capacitación y soporte. Odoo es una marca de Odoo S.A. y D-Nexus es un proveedor de servicios independiente."}}, {"@type": "Question", "name": "¿Qué incluye el pago de implementación?", "acceptedAnswer": {"@type": "Answer", "text": "Levantamiento de necesidades, instalación y configuración, carga inicial de productos y datos, pruebas, capacitación de tu equipo y puesta en marcha. Los desarrollos a medida adicionales se cotizan por separado."}}, {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "La implementación parte desde US$1,500 y el precio final depende del alcance: cantidad de productos, usuarios, módulos y personalizaciones. Después eliges un plan mensual de US$60, US$120 o US$200. Te damos una cotización cerrada antes de empezar."}}, {"@type": "Question", "name": "¿Dónde queda alojado mi sistema?", "acceptedAnswer": {"@type": "Answer", "text": "En un servidor administrado por D-Nexus, con copias de seguridad, según el plan mensual que elijas. Tus datos de negocio son tuyos y puedes pedirnos una copia."}}, {"@type": "Question", "name": "¿Trabajan con negocios de otros países?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La implementación y la capacitación se hacen de forma remota y configuramos moneda, impuestos y métodos de pago según tu país."}}, {"@type": "Question", "name": "¿Qué pasa si necesito algo nuevo después?", "acceptedAnswer": {"@type": "Answer", "text": "Las funciones nuevas o personalizaciones fuera de las horas incluidas en tu plan se cotizan aparte, por precio cerrado o por hora, siempre antes de empezar."}}, {"@type": "Question", "name": "¿Y si el sistema se detiene en pleno servicio?", "acceptedAnswer": {"@type": "Answer", "text": "El soporte funciona en horario laboral y prioriza según gravedad: primero lo que impide vender. Los detalles de tiempos de respuesta se acuerdan por escrito en tu propuesta."}}]}]}</script>
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto px-6 py-12 text-center border-t border-white/10 relative z-10 w-full">
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-sm font-semibold text-gray-300 mb-6">
+            <span class="flex items-center space-x-2.5 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-md shadow-cyan-400"></span>
+                <span class="text-white">Moderno</span>
+            </span>
+            <span class="flex items-center space-x-2.5 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-md shadow-cyan-400"></span>
+                <span class="text-white">Rápido</span>
+            </span>
+            <span class="flex items-center space-x-2.5 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-md shadow-cyan-400"></span>
+                <span class="text-white">Seguro</span>
+            </span>
+            <span class="flex items-center space-x-2.5 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-md shadow-cyan-400"></span>
+                <span class="text-white">Escalable</span>
+            </span>
+        </div>
+
+        <div class="mb-8">
+            <p class="text-xs text-cyan-400 uppercase tracking-widest mb-4 font-semibold">Escríbenos</p>
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <a href="https://wa.me/5351933774" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp" class="w-11 h-11 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-gray-300 hover:text-emerald-400 flex items-center justify-center text-lg transition-all transform hover:-translate-y-1 shadow-md"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://t.me/leolamas86" target="_blank" rel="noopener noreferrer" aria-label="Escribir por Telegram" class="w-11 h-11 rounded-xl bg-white/5 hover:bg-sky-500/20 border border-white/10 hover:border-sky-500/40 text-gray-300 hover:text-sky-400 flex items-center justify-center text-lg transition-all transform hover:-translate-y-1 shadow-md"><i class="fa-brands fa-telegram"></i></a>
+                <a href="mailto:dnexus.dev@gmail.com" aria-label="Escribir por correo" class="w-11 h-11 rounded-xl bg-white/5 hover:bg-blue-500/20 border border-white/10 hover:border-blue-500/40 text-gray-300 hover:text-blue-400 flex items-center justify-center text-lg transition-all transform hover:-translate-y-1 shadow-md"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="legal-links mb-4">
+            <a href="terminos.html">Términos y Condiciones</a> | 
+            <a href="privacidad.html">Política de Privacidad</a> | 
+            <a href="aviso-legal.html">Aviso Legal</a>
+        </div>
+
+        <p class="text-xs text-gray-400 font-medium">&copy; 2026 D-Nexus. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Stardust Engine & Mobile Menu Script -->
+    <script src="main.js" defer></script>
+<!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5351933774?text=Hola%20D-Nexus%2C%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener noreferrer" class="wa-float" data-track="whatsapp_float" aria-label="Escríbenos por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    </body>
+</html>
