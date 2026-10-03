@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es" class="dark overflow-x-hidden max-w-full w-full">
 <head>
     <meta charset="UTF-8">
     <!-- Respaldo crítico: si css/styles.css no carga, la página sigue oscura y legible -->
@@ -23,25 +23,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://d-nexus.github.io/dnexus/img/og-image.jpg">
 
-    <!-- Tailwind CSS Play CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#050811',
-                        cardBg: 'rgba(255, 255, 255, 0.03)',
-                        cardBorder: 'rgba(255, 255, 255, 0.08)',
-                        accentBlue: '#0066ff',
-                        accentCyan: '#00d2ff',
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Favicon -->
+    <!-- Tailwind CSS (compilado) -->
+<!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/favicon.png">
@@ -62,6 +45,7 @@
 
       gtag('config', 'G-SEHNMH3NWE');
     </script>
+    <link rel="stylesheet" href="css/tailwind.css">
 </head>
 <body class="min-h-screen relative selection:bg-blue-600 selection:text-white">
     <a href="#contenido" class="skip-link">Saltar al contenido</a>
@@ -70,8 +54,8 @@
     <canvas id="bg-canvas"></canvas>
 
     <!-- Background Glows -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
-    <div class="absolute top-[30%] left-1/4 w-[600px] h-[600px] bg-indigo-600/10 blur-[180px] rounded-full pointer-events-none z-0"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+    <div class="absolute top-[30%] left-1/4 w-full max-w-[600px] h-[600px] bg-indigo-600/10 blur-[180px] rounded-full pointer-events-none z-0"></div>
 
     <!-- Navbar -->
     <header class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-50">

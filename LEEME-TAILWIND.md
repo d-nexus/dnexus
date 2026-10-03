@@ -1,15 +1,19 @@
-# Compilar Tailwind (una sola vez, ~1 minuto)
+# Tailwind: ya viene compilado
 
-Requiere Node.js instalado. Desde la carpeta del sitio:
+Las páginas cargan `css/tailwind.css` (unos 35 KB) y ya no usan el CDN de desarrollo,
+que compilaba el CSS en el navegador de cada visitante.
 
-1. Compilar el CSS:
-   npx tailwindcss@3 -i ./input.css -o ./css/tailwind.css --minify
+## Cuándo recompilar
+Solo si agregas o cambias clases de Tailwind en un HTML o en `main.js`
+(por ejemplo, usas `bg-red-500` y antes no existía en el sitio).
 
-2. Cambiar las páginas del CDN al CSS compilado:
-   node usar-tailwind-compilado.js
+## Cómo recompilar (necesitas Node.js)
+    npx tailwindcss@3 -i ./input.css -o ./css/tailwind.css --minify
 
-3. Abrir index.html y revisar que todo se vea igual.
+Sube después `css/tailwind.css` a tu repo (con Ctrl+Shift+R para ver el cambio).
 
-Cada vez que uses una clase de Tailwind nueva, repite solo el paso 1.
-Puedes borrar de tu repo: tailwind.config.js, input.css y estos scripts si no piensas recompilar,
-pero conviene conservarlos.
+## Archivos
+- `tailwind.config.js`: colores propios y qué archivos se escanean.
+- `input.css`: punto de entrada de Tailwind.
+- `css/tailwind.css`: resultado compilado (este es el que usa el sitio).
+- `css/styles.css`: estilos propios del sitio.
